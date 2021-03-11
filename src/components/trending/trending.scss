@@ -1,0 +1,209 @@
+@import "../../assets/sass/mixins";
+.trending-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+  padding-left: 19%;
+  padding-top: 12vh;
+  background-color: rgba(0, 0, 0, 0.92);
+  @include responsivePhoneSize {
+    padding-left: 0%;
+    padding-bottom: 8vh;
+  }
+  @include responsiveTabletPortraitSize {
+    padding-left: 0%;
+    padding-bottom: 8vh;
+    padding-top: 6.5vh;
+  }
+  @include responsiveTabletLandscapeSize {
+    padding-left: 2%;
+  }
+  .video-result-container {
+    width: 80%;
+    height: 21vh;
+    margin-bottom: 1.2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @include responsivePortraitSize {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+      box-sizing: border-box;
+    }
+    .video-result-thumbnail {
+      position: relative;
+      width: 28.5%;
+      height: 100%;
+      padding: 0;
+      @include responsivePortraitSize {
+        width: 100vw;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-result-thumbnail-time {
+        padding: 2px 4px;
+        margin: 5px 4px;
+        font-weight: 500;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-size: 12px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include responsiveTabletPortraitSize {
+          bottom: 10px;
+        }
+      }
+      .video_current_progress {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        background-color: #667687;
+        div {
+          height: 100%;
+          background-color: #ff0000;
+        }
+      }
+    }
+    .video-result-info-container {
+      width: 71.5%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 1.5%;
+      padding-top: 0.3%;
+      @include responsivePortraitSize {
+        width: 100%;
+        padding: 16px;
+        padding-right: 20px;
+      }
+      .vr-title {
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 3px;
+        @include responsivePortraitSize {
+          font-size: 0.8rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 100%;
+          max-height: 60px;
+        }
+      }
+      .vr-channel {
+        display: flex;
+        @include responsivePortraitSize {
+          font-size: 0.7rem !important;
+          white-space: nowrap;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .owner-badge-icon {
+          @include responsivePortraitSize {
+            display: none;
+          }
+        }
+      }
+      .vr-author-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 8px;
+        z-index: 900;
+
+        .vr-author-image {
+          width: 26px;
+          height: 26px;
+          border-radius: 26px;
+          margin: 8px 0px;
+          margin-right: 8px;
+        }
+        .vr-author {
+          padding-top: 6px;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+      .vr-description {
+        font-size: 13px;
+        font-weight: 400;
+        color: #aaaaaa;
+        @include responsivePortraitSize {
+          display: none;
+        }
+      }
+      .vr-badges-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 12px;
+        .vr-badge {
+          font-size: 0.75rem;
+          font-weight: 400;
+          padding: 2px 4px;
+          background-color: #222222;
+          border-radius: 2px;
+          margin-right: 4px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      .vr-channel,
+      .vr-author {
+        font-size: 13px;
+        font-weight: 400;
+        color: #aaaaaa;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: 0.15s linear all;
+      }
+    }
+    &.video-result-container-big {
+      width: 96%;
+      height: 32vh;
+      .video-result-thumbnail {
+        width: 38%;
+      }
+    }
+  }
+}
+
+.trending-container--light-theme {
+  background-color: #f9f9f9;
+
+  .video-result-info-container,
+  .video-result-container-big {
+    .vr-title {
+      color: #222222 !important;
+    }
+    .vr-channel,
+    .vr-author {
+      color: #727272 !important;
+    }
+    .vr-author:hover {
+      color: black !important;
+    }
+    .vr-description {
+      color: #707070 !important;
+    }
+    .vr-badge {
+      background-color: #ececec !important;
+      color: rgba(0, 0, 0, 0.5) !important;
+      font-weight: 500 !important;
+    }
+  }
+}

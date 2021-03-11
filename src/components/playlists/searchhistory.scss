@@ -1,0 +1,80 @@
+.search_item-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-top: 5px;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    &:nth-child(1) {
+        padding-top: 30px;
+    }
+    .search_data-container {
+        display: flex;
+        flex-direction: column;
+        .search_term {
+            font-weight: 600;
+            padding-bottom: 6px;
+        }
+        .search_date {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    }
+    .tooltip-container {
+        z-index: 500;
+        .close-btn {
+            fill: rgba(255, 255, 255, 0.4);
+            width: 18px;
+            height: 18px;
+            margin-right: 20px;
+        }
+    }
+}
+.deleted_item-container {
+    display: flex; justify-content: center;
+    align-items: center;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.search_term_deleted {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.55;
+}
+
+.playlist-container--light {
+    .search_item-container {
+        .search_data-container {
+            .search_term {
+                color: #222222;
+            }
+            .search_date {
+                color: #222222;
+            }
+        }
+        .tooltip-container {
+            .close-btn {
+                fill: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+    .search_term_deleted {
+        color: #222222;
+    }
+    .activity_manager-container {
+        color: #222222;
+    }
+}
+
+.delete-playlist-modal {
+    cursor: pointer;
+    position: relative;
+}

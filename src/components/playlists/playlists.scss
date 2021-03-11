@@ -1,0 +1,567 @@
+@import "../../assets/sass/mixins";
+
+.playlist-container {
+  .playlist-component-container {
+    padding-left: 17.5%;
+    padding-top: 8.6vh;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1c1c1c;
+    @include responsivePortraitSize {
+      flex-direction: column;
+      padding-left: 0;
+      padding-top: 5vh;
+      height: auto !important;
+    }
+    @include responsiveTabletLandscapeSize {
+      padding-left: 0%;
+    }
+    .playlist-info-container {
+      width: 31%;
+      height: 100%;
+      min-height: 100vh;
+      background-color: #1f1f1f;
+      max-height: 100vh;
+      padding: 2% 3%;
+      position: fixed;
+      @include responsivePortraitSize {
+        width: 100%;
+        height: auto !important;
+        padding: 0;
+        position: relative;
+        min-height: auto;
+      }
+      .playlist-info {
+        width: 100%;
+        height: 55vh;
+        // border-bottom: 1px solid #272727;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include responsivePortraitSize {
+          height: auto !important;
+        }
+        .playlist-thumbnail {
+          width: 100%;
+          height: 55%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: gray;
+          @include responsivePortraitSize {
+            display: none;
+          }
+          @include responsiveTabletLandscapeSize {
+            height: 34% !important;
+          }
+        }
+        .playlist-title {
+          font-weight: 500;
+          font-size: 1.56em;
+          margin-top: 3%;
+          @include responsivePortraitSize {
+            order: 1;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 4px;
+            padding-left: 12px;
+          }
+        }
+        .playlist-title-user {
+          display: none;
+          @include responsivePortraitSize {
+            display: flex;
+            order: 2;
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            padding-left: 12px;
+          }
+        }
+        .playlist-totalvideos {
+          margin-top: 3.5%;
+          font-size: 0.85em;
+          font-weight: 400;
+          color: rgb(182, 178, 178);
+          @include responsivePortraitSize {
+            order: 4;
+            width: 100%;
+            padding: 16px 12px 24px 12px;
+          }
+        }
+        .playlist-type {
+          margin-top: 4.5%;
+          font-size: 0.8em;
+          color: rgb(218, 216, 216);
+          background-color: #363636;
+          padding: 2px 4px;
+          border-radius: 3px;
+          margin-bottom: 12px;
+          @include responsivePortraitSize {
+            display: none;
+          }
+        }
+        .delete-playlist-mobile-btn {
+          display: none;
+          @include responsivePortraitSize {
+            display: flex;
+            order: 3;
+            margin-left: 10px;
+          }
+        }
+        .delete-playlist-modal {
+          @include responsivePortraitSize {
+            display: none;
+            order: 3;
+            padding-bottom: 20px;
+            padding-left: 12px;
+          }
+        }
+      }
+      .playlist-user-info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin-top: 4%;
+        @include responsivePortraitSize {
+          display: none;
+        }
+        img {
+          width: 48px;
+          height: 48px;
+          object-fit: cover;
+          margin-right: 17px;
+          border-radius: 50%;
+        }
+        span {
+          font-size: 0.9em;
+          font-weight: 700;
+        }
+      }
+    }
+    .playlist-video-container {
+      margin-left: 37%;
+      width: 63%;
+      height: 100%;
+      max-height: 100%;
+      min-height: 100vh;
+      padding: 0px 14px;
+      @include responsivePortraitSize {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        overflow-x: auto;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+      }
+      &.playlist-video-container-history {
+        margin: 0;
+        background-color: #1f1f1f;
+        width: 60.6% !important;
+        min-height: 91.4vh;
+      }
+      .playlist-empty-text {
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-top: 16px;
+        display: inline-block;
+        font-size: 0.9rem;
+      }
+    }
+    .playlist-video {
+      width: 95%;
+      height: 15vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      @include responsivePortraitSize {
+        margin: 10px 0px;
+      }
+      &:last-of-type {
+        @include responsivePortraitSize {
+          margin-bottom: 8vh;
+        }
+      }
+      @include responsivePortraitSize {
+        height: auto;
+      }
+      .number {
+        margin-right: 2%;
+        font-size: 0.8em;
+        color: rgb(201, 201, 201);
+        @include responsivePortraitSize {
+          display: none;
+        }
+      }
+      .video-basic-data {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        @include responsivePortraitSize {
+          padding: 0px 12px;
+        }
+        .video-thumb {
+          width: 19%;
+          height: 65%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: relative;
+          @include responsivePortraitSize {
+            width: 52%;
+            height: 100px;
+          }
+          @include responsiveTabletPortraitSize {
+            width: 52%;
+            height: 200px;
+          }
+          span {
+            padding: 4px;
+            font-size: 0.76em;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 2px;
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            @include responsivePortraitSize {
+              font-size: 0.7rem;
+            }
+          }
+          .video_current_progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #678;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            div {
+              background-color: #c4302b;
+              height: 100%;
+            }
+          }
+        }
+        .video-title-channel-container {
+          width: 81%;
+          height: 65%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-left: 2%;
+          @include responsivePortraitSize {
+            width: 40%;
+          }
+          .video-title {
+            width: 90%;
+            max-height: 100px;
+            font-weight: 500;
+            font-size: 1.15rem;
+            color: rgb(224, 219, 219);
+            display: block;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            -webkit-line-clamp: 2;
+            @include responsivePortraitSize {
+              font-size: 0.8rem;
+            }
+          }
+          .video-channel {
+            font-weight: 400;
+            color: rgb(182, 178, 178);
+            font-size: 0.8em;
+            margin-top: 10px;
+            @include responsivePortraitSize {
+              opacity: 0.8;
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+      &.playlist-video.playlist-history {
+        height: 160px;
+        max-height: 160px;
+        border: none !important;
+        position: relative;
+        .video-basic-data {
+          .video-thumb {
+            width: 44% !important;
+            height: 90% !important;
+          }
+          .video-title-channel-container {
+            width: 50%;
+            align-self: flex-start;
+            padding-top: 1.5%;
+          }
+        }
+      }
+    }
+  }
+  .btn-container {
+    @include responsivePortraitSize {
+      display: flex !important;
+    }
+    .btn-options {
+      @include responsivePortraitSize {
+        opacity: 1 !important;
+      }
+      @include responsiveTabletLandscapeSize {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+.playlist-container--light {
+  .delete-playlist-modal div {
+    fill: black !important;
+  }
+  .playlist-component-container {
+    background-color: #f1f1f1;
+    @include responsivePortraitSize {
+      background-color: #f9f9f9;
+    }
+    .playlist-info-container {
+      background-color: #f9f9f9;
+      color: #0a0303;
+      @include responsivePortraitSize {
+        background-color: #f1f1f1;
+      }
+      .playlist-info {
+        .playlist-type {
+          background-color: rgb(218, 216, 216);
+          color: #363636;
+        }
+        .playlist-totalvideos {
+          color: #909090;
+          @include responsivePortraitSize {
+            border-top: 1pt solid gray;
+            background-color: #f9f9f9;
+          }
+        }
+        .playlist-title {
+          color: black;
+        }
+      }
+      .playlist-user-info {
+        img {
+        }
+        span {
+        }
+      }
+    }
+    .playlist-video-container {
+      background-color: #f0f0f0 !important;
+      .playlist-empty-text {
+        color: black;
+      }
+      h4 {
+        color: #222222;
+      }
+      .playlist-video {
+        .number {
+        }
+        .video-basic-data {
+          .video-thumb {
+            span {
+              opacity: 1;
+              color: white;
+            }
+          }
+          .video-title-channel-container {
+            .video-title {
+              color: #0a0303;
+            }
+            .video-channel {
+              color: #353535;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn-container {
+    @include responsivePortraitSize {
+      display: flex !important;
+    }
+    .btn-options {
+      @include responsivePortraitSize {
+        opacity: 1 !important;
+      }
+      span,
+      span::before,
+      span::after {
+        background-color: black;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.playlist-container--light .delete-playlist-mobile-btn .icon-small-modal {
+  fill: black !important;
+}
+
+.btn-options:hover .three-points-toggle,
+.btn-options:hover .three-points-toggle::after,
+.btn-options:hover .three-points-toggle::before {
+  background-color: white;
+  fill: white;
+}
+.playlist-container--light .btn-options:hover .three-points-toggle,
+.playlist-container--light .btn-options:hover .three-points-toggle::after,
+.playlist-container--light .btn-options:hover .three-points-toggle::before {
+  background-color: black !important;
+  fill: black;
+}
+.three-points-toggle,
+.three-points-toggle::after,
+.three-points-toggle::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: block;
+}
+.three-points-toggle::after {
+  transform: translateY(2px);
+}
+.three-points-toggle::before {
+  transform: translateY(-6px);
+}
+.playlist-container--light .btn-options {
+  color: #909090;
+}
+.btn-options:hover {
+  color: red;
+}
+.playlist-modal {
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translate(-100%, 27px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include responsivePortraitSize {
+    z-index: 2100 !important;
+    position: fixed;
+    transform: translate(0px, 0px);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45) !important;
+  }
+}
+.playlist-modal-inner {
+  width: auto;
+  height: auto;
+  background-color: #222222;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  @include responsivePortraitSize {
+    border-radius: 0px;
+    color: white;
+  }
+  .playlist-modal-inner-container {
+    background-color: rgb(33, 33, 33);
+  }
+}
+.playlist-container--light .btn-options:hover {
+  color: #575757;
+}
+.playlist-video:hover {
+  cursor: pointer;
+}
+.videocard-container .btn-container .playlist-modal {
+  transform: translate(-98%, 20px);
+  height: auto;
+  width: 320px;
+}
+.videocard-container .btn-container .playlist-modal--up-position {
+  transform: translate(-98%, -107%);
+}
+.playlist-modal--right-position {
+  transform: translate(-5%, 26%);
+}
+.playlist-modal--autowidth {
+  width: auto !important;
+  padding: 8px 0px;
+}
+.playlist-modal--autowidth .modal-rv-item {
+  padding: 6px 14px;
+  color: white;
+}
+.playlist-video:hover .btn-options,
+.videocard-container:hover .btn-options {
+  opacity: 1;
+}
+.modal-rv-item {
+  i {
+    padding-left: 10px;
+  }
+  span {
+    white-space: nowrap;
+    padding-right: 30px;
+  }
+}
+
+.icon-small-modal {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: white;
+  opacity: 0.5;
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.root--light {
+  .icon-small-modal {
+    fill: #222222 !important;
+  }
+}
+.root--light .playlist-modal-inner .divider .inner-divider,
+.playlist-container--light .playlist-modal-inner .divider .inner-divider {
+  background-color: #ccc;
+}
+.root--light .playlist-modal-inner,
+.playlist-container--light .playlist-modal-inner {
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  color: black;
+}
+.root--light .btn-options,
+.playlist-container--light .btn-options {
+  color: #666;
+}
+.playlist-modal-inner--up-position {
+  transform: translate(-103%, -102%);
+}

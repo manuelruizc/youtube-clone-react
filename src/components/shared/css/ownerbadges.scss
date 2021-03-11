@@ -1,0 +1,33 @@
+.trending-container {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding-left: 19%;
+    padding-top: 12vh;
+    background-color:rgba(0, 0, 0, 0.92);
+}
+
+.owner-badge-icon {
+    width:11px;
+    height: 11px;
+    fill: white;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    margin-left: 6px;
+    margin-bottom: 3px;
+    margin-right: 12px;
+    transform: translateY(12.5%);
+    &.verified-icon {
+        width:13px;
+        height:13px;
+        margin-left: 4px;
+    }
+}
+.owner-badge-icon.light-theme-owner-badge-icon {
+    fill: black;
+}

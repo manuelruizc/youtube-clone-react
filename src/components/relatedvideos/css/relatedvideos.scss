@@ -1,0 +1,267 @@
+@import "../../../assets/sass/mixins";
+/*RELATED VIDEOS*/
+.left-container {
+  width: 66.8%;
+  margin: 0 !important;
+}
+
+.right-container {
+  width: 31%;
+  @include responsivePortraitSize {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  @include responsiveTabletLandscapeSize {
+    width: 22.5%;
+    padding-top: 10px;
+  }
+  .next-video {
+    padding: 0px 10px 0px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    @include responsivePortraitSize {
+      padding: 0px 18px;
+    }
+    @include responsiveTabletLandscapeSize {
+      align-items: center !important;
+      margin-bottom: 16px;
+    }
+    .next-video-title {
+      @include responsiveTabletLandscapeSize {
+        font-size: 0.6rem !important;
+        transform: translateY(5px);
+      }
+    }
+    .autoplay-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include responsiveTabletLandscapeSize {
+        width: 50%;
+      }
+      .autoplay-spantag {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-right: 10px;
+        color: #909090;
+        font-weight: 500;
+        @include responsiveTabletLandscapeSize {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+  .videocard-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .playlist-icon {
+      width: 32px;
+      transform: translateX(2px);
+    }
+    @include responsivePortraitSize {
+      width: 30%;
+      margin-bottom: 4% !important;
+    }
+    @include responsiveTabletLandscapeSize {
+      padding-right: 16px;
+      margin-bottom: 28px;
+    }
+    .videocard {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include responsivePortraitSize {
+        width: 100%;
+        flex-direction: column;
+      }
+      @include responsiveTabletLandscapeSize {
+        width: 100%;
+        flex-direction: column;
+      }
+      .thumbnail {
+        min-width: 168px;
+        width: 168px;
+        height: 94px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        position: relative;
+        @include responsivePhoneSize {
+          height: 100px !important;
+        }
+        @include responsivePortraitSize {
+          width: 100% !important;
+          height: 120px !important;
+          margin: 0 !important;
+          margin-bottom: 8px !important;
+        }
+        @include responsiveTabletLandscapeSize {
+          width: 100%;
+          height: 30% !important;
+        }
+        .thumbnail--img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .thumbnail--time {
+          padding: 2px 4px;
+          margin: 4px 2px;
+          font-weight: 500;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+          font-size: 12px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        .video_current_progress {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          background-color: #667687;
+          div {
+            background-color: #c42f2a;
+            height: 100%;
+          }
+        }
+      }
+      .videoinfo--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 13px;
+        color: rgb(104, 104, 104);
+        .videoinfo--container--title {
+          font-size: 13px;
+          font-weight: 500;
+          max-width: 202px;
+          max-height: 30px;
+          width: auto;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-bottom: 4px;
+          color: white;
+        }
+        .videoinfo--container--author {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: auto;
+          .rv-author {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 190px;
+          }
+        }
+      }
+    }
+  }
+  .videocard-container:nth-of-type(2) {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1pt solid #333;
+  }
+  &.right-container-theater {
+    margin-top: 75vh !important;
+    @include responsivePhoneSize {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.videocard-title--loading {
+  width: 30%;
+  height: 18px;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  background-color: hsl(0, 0%, 11%);
+}
+.videocard--loading {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  /*animation:blinking 3s infinite linear;*/
+  .thumbnail--loading {
+    width: 168px;
+    height: 94px;
+    margin-right: 8px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    position: relative;
+    background-color: hsl(0, 0%, 11%);
+  }
+  .video-info--loading {
+    width: 132px;
+    height: 22px;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 11%);
+    position: relative;
+    &::after {
+      content: "";
+      width: 90%;
+      height: 80%;
+      background-color: hsl(0, 0%, 11%);
+      position: absolute;
+      border-radius: 4px;
+      bottom: 0;
+      left: 0;
+      transform: translateY(150%);
+    }
+  }
+}
+
+.root--light {
+  .icon-small-modal {
+    fill: #222222 !important;
+  }
+  .next-video {
+    .next-video-title {
+      color: #313131;
+    }
+  }
+  .btn-container:hover .three-points-toggle::before,
+  .btn-container:hover .three-points-toggle::after,
+  .btn-container:hover .three-points-toggle {
+    background-color: rgba(0, 0, 0, 0.823);
+  }
+  .three-points-toggle::after,
+  .three-points-toggle::before,
+  .three-points-toggle {
+    background-color: rgba(0, 0, 0, 0.638);
+  }
+  .videocard-container:nth-of-type(2) {
+    border-bottom: 1pt solid #d4d4d4;
+  }
+  .thumbnail--loading,
+  .video-info--loading,
+  .video-info--loading::after {
+    background-color: #e6e6e6;
+  }
+  .videoinfo--container--title {
+    color: black !important;
+  }
+  .videocard-title--loading {
+    background-color: #e6e6e6;
+  }
+  .btn-container {
+    .modal-rv-item:hover {
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+  }
+}

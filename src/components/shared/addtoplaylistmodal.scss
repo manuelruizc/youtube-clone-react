@@ -1,0 +1,239 @@
+@import "../../assets/sass/mixins";
+
+#modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+}
+#modal-out {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+.playlist-form-container {
+  width: 22%;
+  height: auto;
+  min-height: 182px;
+  max-height: 60%;
+  background-color: #212121;
+  z-index: 2100;
+  border-radius: 1.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #eee;
+  @include responsivePortraitSize {
+    min-width: 36%;
+    min-height: 30%;
+  }
+}
+.modal-container--light-theme .playlist-form-container {
+  background-color: #fff;
+  color: #212121;
+}
+.download-container {
+  width: 50%;
+  height: 60%;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 12000;
+  overflow-y: auto;
+  color: black;
+}
+.form-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+}
+.form-header .close-playlist-icon {
+  cursor: pointer;
+  fill: white;
+  width: 16px;
+  height: 16px;
+  opacity: 0.5;
+}
+.modal-container--light-theme .close-playlist-icon {
+  fill: black;
+}
+.playlist-scroll {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 5px 25px;
+  border-top: 1pt solid #333;
+  border-bottom: 1pt solid #333;
+}
+.modal-container--light-theme .playlist-scroll {
+  border-top: 1pt solid #ddd;
+  border-bottom: 1pt solid #ddd;
+}
+.playlist-scroll label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+.playlist-scroll .box-checking {
+  width: 20px;
+  height: 20px;
+  border: 2pt #444 solid;
+  border-radius: 2px;
+  margin-right: 15px;
+  padding: 0;
+  position: relative;
+  overflow: auto;
+}
+.playlist-scroll .box-checking.checked {
+  border: 2pt #065fd4 solid;
+  background-color: #065fd4;
+}
+.playlist-scroll .box-checking div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.1s linear all;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #065fd4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playlist-scroll .box-checking div i {
+  color: #212121;
+  font-size: 14px;
+}
+.modal-container--light-theme .playlist-scroll .box-checking div i {
+  color: #fff;
+}
+.playlist-scroll .box-checking .box-uncheked {
+  opacity: 0;
+  transform: scale(0.7);
+}
+.playlist-scroll input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.add-new-playlist {
+  min-height: 38px;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.playlist-name-form {
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 30px;
+}
+.playlist-group-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.playlist-group-form div,
+.playlist-group-form input {
+  width: 100%;
+  height: 24px;
+  outline: none;
+  border: 1pt solid transparent;
+  border-bottom: 1pt solid #333;
+  cursor: pointer;
+  background-color: #212121;
+  color: white;
+}
+.modal-container--light-theme .playlist-group-form div,
+.modal-container--light-theme .playlist-group-form input {
+  background-color: #fff;
+  border-bottom: 1pt solid #ddd;
+  color: #212121;
+}
+.playlist-group-form div,
+.playlist-group-form input::placeholder {
+  color: #555;
+}
+.playlist-name-form label {
+  font-size: 0.8em;
+}
+.select-privacy {
+  position: relative;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-playlist {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #065fd4;
+  cursor: pointer;
+}
+.privacy-container {
+  width: 130% !important;
+  height: 180px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 2300;
+  border: 0 !important;
+}
+.privacy-container div {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0 !important;
+}
+.privacy-container div:hover {
+  background: rgb(230, 230, 230);
+  cursor: pointer;
+}
+.select-privacy span {
+  width: 100%;
+  height: 100%;
+}
+.active-privacy {
+  border: none !important;
+  font-size: 0.8rem;
+}

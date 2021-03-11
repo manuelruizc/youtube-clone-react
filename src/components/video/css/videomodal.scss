@@ -1,0 +1,140 @@
+@import '../../../assets/sass/mixins';
+.video-options-modal {
+    position:absolute;
+    top:-10px;
+    right:1.5%;
+    min-width: 250px;
+    height: auto;
+    max-height: 51vh;
+    overflow-y: auto;
+    width:auto;
+    background-color: #212121ee;
+    border-radius: 3px;
+    transform: translateY(-100%);
+    padding: 8px 0px;
+    cursor: pointer;
+    transition: 1s linear all;
+    animation-name: modalanimation;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    z-index: 99999999999999;
+    &.video-options-modal--unactive {
+        transition: 1s linear all;
+        animation-name: modalanimationreverse;
+        animation-duration: 0.15s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+    }
+    .video-modal-item-header {
+        width: 100%;
+        height: 50px;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        border-bottom: 1pt solid rgba(255, 255, 255, 0.2);
+        &.single-item {
+            justify-content: flex-start;
+        }
+        .modal-item-header-button {
+            font-weight: 500;
+        }
+        .modal-item-header-secondary-button {
+            font-weight: 300;
+            text-decoration: underline;
+        }
+    }
+    .video-options-modal-item {
+        width: 100%;
+        height: 40px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.25);
+        }
+        &.single-item {
+            justify-content: flex-start;
+        }
+        .video-modal-item-title {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.watermark {
+    position: absolute;
+    right: 0;
+    width: 43px;
+    height: 43px;
+    margin-right: 14px;
+    opacity: 0.6;
+    overflow: hidden;
+    z-index: 4;
+    transition: 0.2s ease-in-out all;
+    @include responsivePhoneSize {
+        display: none;
+    }
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: 0.15s linear all;
+    }
+    &.watermark-controls-unactive {
+        bottom: 20px;
+    }
+    &.watermark-controls-active {
+        bottom: 56px;
+    }
+    &.watermark-hide {
+        animation-name: hidewatermark;
+        animation-duration: 0.1s;
+        animation-delay: 0.15s;
+        animation-fill-mode: forwards;
+        img {
+            transform: translateX(100%);
+        }
+    }
+}
+
+@keyframes hidewatermark {
+    from {
+        width:54px;
+        height: 54px;
+    }
+    to {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+@keyframes modalanimation {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+       opacity: 1;
+       visibility: visible;
+    }
+}
+
+@keyframes modalanimationreverse {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+       opacity: 0;
+       visibility: hidden;
+    }
+}

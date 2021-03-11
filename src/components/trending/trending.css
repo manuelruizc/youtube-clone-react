@@ -1,0 +1,12 @@
+.trending-container {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding-left: 19%;
+    padding-top: 12vh;
+    background-color:rgba(0, 0, 0, 0.92);
+}

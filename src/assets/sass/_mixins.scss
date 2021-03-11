@@ -1,0 +1,29 @@
+@mixin responsivePhoneSize {
+  @media screen and (max-width: 587px) {
+    @content;
+  }
+}
+
+@mixin responsiveNavSize {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin responsivePortraitSize {
+  @media screen and (max-width: 873px) {
+    @content;
+  }
+}
+
+@mixin responsiveTabletPortraitSize {
+  @media screen and (min-width: 588px) and (max-width: 873px) {
+    @content;
+  }
+}
+
+@mixin responsiveTabletLandscapeSize {
+  @media screen and (min-width: 874px) and (max-width: 1024px) {
+    @content;
+  }
+}

@@ -1,0 +1,80 @@
+@import '../../../assets/sass/mixins';
+
+.not-logged-screen-container {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 17.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgba(0, 0, 0, 0.92);
+    @include responsivePhoneSize {
+        padding: 0px 18px;
+    }
+    .not-logged-main-icon {
+        width:105px;
+        fill: white;
+        opacity: 0.4;
+        margin-bottom: 28px;
+    }
+    .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    .description {
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin-bottom: 24px;
+        text-align: center;
+        width: 80%;
+    }
+    .login-btn {
+        position:relative;
+        border:1pt solid #0660d7;
+        background-color:transparent;
+        width: 9.5%;
+        height: 38px !important;
+        display:flex;
+        justify-content: space-between !important;
+        align-items: center;
+        cursor: pointer;
+        @include responsivePhoneSize {
+            width: 30%;
+            justify-content: center !important;
+        }
+        span {
+            font-size:0.9rem;
+            text-transform: uppercase;
+            color: #0660d7;
+            font-weight: 500;
+            @include responsivePhoneSize {
+                text-align: center;
+            }
+        }
+        div {
+            width: 25px;
+            height:25px;
+            border-radius: 30px;
+            background-color: #0660d7;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                color: white !important;
+            }
+        }
+    }
+}
+
+.not-logged-screen-container--light-theme {
+    background-color: #F9F9F9;
+    .title, .description {
+        color: black;
+    }
+    .not-logged-main-icon {
+        fill: black;
+    }
+}

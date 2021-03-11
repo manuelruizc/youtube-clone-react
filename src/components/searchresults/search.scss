@@ -1,0 +1,248 @@
+@import "../../assets/sass/mixins";
+
+.search-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  background: hsl(0, 0%, 7%);
+  .search_results {
+    padding-top: 11vh;
+    padding-left: 2%;
+    width: 82.5%;
+    margin-left: 17.5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include responsivePortraitSize {
+      margin-left: 0;
+      padding-right: 3%;
+      padding-left: 3%;
+      width: 100%;
+      padding-top: 8vh;
+    }
+    .video-result-container {
+      width: 80%;
+      height: 21vh;
+      margin-bottom: 1.2%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      @include responsivePortraitSize {
+        width: 100% !important;
+        height: 96px !important;
+        margin-bottom: 3.5% !important;
+        justify-content: flex-start;
+      }
+      .video-result-thumbnail {
+        position: relative;
+        width: 28.5%;
+        height: 100%;
+        padding: 0;
+        @include responsivePortraitSize {
+          width: 48% !important;
+        }
+        @include responsiveTabletPortraitSize {
+          width: 30% !important;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .video-result-thumbnail-time {
+          padding: 2px 4px;
+          margin: 5px 4px;
+          font-weight: 500;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: white;
+          font-size: 12px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        .video_current_progress {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 5px;
+          background-color: #678;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          div {
+            background-color: #ff0000;
+            height: 100%;
+          }
+        }
+      }
+      .video-result-info-container {
+        width: 71.5%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 1.5%;
+        padding-top: 0.3%;
+        @include responsivePortraitSize {
+          width: 46% !important;
+          padding-left: 0;
+          margin-left: 8px;
+          // justify-content: space-between !important;
+          padding: 0;
+        }
+        .vr-channel,
+        .vr-author {
+          font-size: 13px;
+          font-weight: 400;
+          color: #aaaaaa;
+          margin-bottom: 8px;
+          white-space: nowrap;
+          cursor: pointer;
+          transition: 0.15s linear all;
+        }
+        .vr-title {
+          font-size: 18px;
+          font-weight: 400;
+          color: white;
+          margin-bottom: 3px;
+          @include responsivePortraitSize {
+            box-sizing: border-box;
+            font-size: 0.8rem;
+            text-overflow: ellipsis;
+            white-space: pre-line;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: 0;
+            line-height: 1.1em;
+            max-height: 2.2em;
+            height: auto;
+          }
+        }
+        .vr-channel {
+          display: flex;
+          @include responsivePortraitSize {
+            font-size: 0.7rem !important;
+            margin-top: 1.5%;
+            max-width: 94%;
+            padding: 0 !important;
+            white-space: pre-line !important;
+            margin: 0 !important;
+            // margin-top: 2px !important;
+          }
+        }
+        .vr-author-container {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 8px;
+          z-index: 900;
+          @include responsivePortraitSize {
+            max-width: 140px;
+            height: auto !important;
+          }
+          .vr-author-image {
+            width: 26px;
+            height: 26px;
+            border-radius: 26px;
+            margin: 8px 0px;
+            margin-right: 8px;
+            @include responsivePortraitSize {
+              display: none;
+            }
+          }
+          .vr-author {
+            // padding-top:6px;
+            @include responsivePortraitSize {
+              display: inline-block;
+              font-size: 0.7rem;
+              padding-top: 0px;
+              max-width: 140px !important;
+              width: auto;
+              padding: 0 !important;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin: 0 !important;
+            }
+            &:hover {
+              color: white;
+            }
+          }
+          .owner-badge-icon {
+            margin: 0px;
+            margin-left: 4px;
+            transform: translateY(0%);
+          }
+        }
+        .vr-description {
+          font-size: 13px;
+          font-weight: 400;
+          color: #aaaaaa;
+          @include responsivePortraitSize {
+            display: none;
+          }
+        }
+        .vr-badges-container {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 12px;
+          .vr-badge {
+            font-size: 0.75rem;
+            font-weight: 400;
+            padding: 2px 4px;
+            background-color: #222222;
+            border-radius: 2px;
+            margin-right: 4px;
+            color: rgba(255, 255, 255, 0.5);
+            @include responsivePortraitSize {
+              display: none;
+            }
+          }
+        }
+      }
+      &.video-result-container-big {
+        width: 96%;
+        height: 29vh;
+        .video-result-thumbnail {
+          width: 38%;
+        }
+      }
+    }
+  }
+}
+
+.search-container--light {
+  background-color: #ffffff;
+  .video-result-info-container,
+  .video-result-container-big {
+    .vr-title {
+      color: #222222 !important;
+    }
+    .vr-channel,
+    .vr-author {
+      color: #727272 !important;
+    }
+    .vr-author:hover {
+      color: black !important;
+    }
+    .vr-description {
+      color: #707070 !important;
+    }
+    .vr-badge {
+      background-color: #ececec !important;
+      color: rgba(0, 0, 0, 0.5) !important;
+      font-weight: 500 !important;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Search videos</ShortName>
+  <Description>Search on CloneTube</Description>
+  <Url type="text/html" method="get"
+       template="http://clonetubeapi-env.eba-gybtupwa.us-east-2.elasticbeanstalk.com/results?search_query={searchTerms}"/>
+</OpenSearchDescription>
