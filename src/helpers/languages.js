@@ -7,14 +7,14 @@ const availableLanguages = [
     'fr',
     'it',
     'nl',
-    'pt'
+    'pt',
 ];
 let language = localStorage.getItem('language');
 language = JSON.parse(language);
 language = language ? language : navigator.languages;
 let languageCode = language[1];
-if(!availableLanguages.includes(languageCode)) {
-    languageCode = "en";
+if (!availableLanguages.includes(languageCode)) {
+    languageCode = 'en';
     language = ['en', 'en'];
 }
 

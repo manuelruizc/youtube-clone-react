@@ -1,23 +1,24 @@
 import languagesArray from '../helpers/languages';
 
 const locales = {
-    "ca": {
+    ca: {
         title: 'Llista de canals',
         subscribeButton: {
-            subscribed: "Suscrit",
-            unsubscribed: "Subscriu-me"
+            subscribed: 'Suscrit',
+            unsubscribed: 'Subscriu-me',
         },
         confirmModal: {
             confirmButton: 'Cancel·la la subscripció',
             cancelButton: 'Cancel·la',
-            description: (channel_name) => `Vols cancel·lar la subscripció a ${channel_name} ?`,
+            description: (channel_name) =>
+                `Vols cancel·lar la subscripció a ${channel_name} ?`,
         },
         toast: {
             subscribed: "S'ha afegit la subscripció.",
             unsubscribed: "S'ha eliminat la subscripció",
-        }
+        },
     },
-    "en": {
+    en: {
         title: 'Channel list',
         subscribeButton: {
             subscribed: 'Subscribed',
@@ -31,9 +32,9 @@ const locales = {
         toast: {
             subscribed: 'Subscription added',
             unsubscribed: 'Subscription removed',
-        }
+        },
     },
-    "es": {
+    es: {
         title: 'Lista de canales',
         subscribeButton: {
             subscribed: 'Suscrito',
@@ -42,14 +43,15 @@ const locales = {
         confirmModal: {
             confirmButton: 'Anular suscripción',
             cancelButton: 'Cancelar',
-            description: (channel_name) => `¿Deseas anular tu suscripción a ${channel_name}?`,
+            description: (channel_name) =>
+                `¿Deseas anular tu suscripción a ${channel_name}?`,
         },
         toast: {
             subscribed: 'Suscripción agregada',
             unsubscribed: 'Se eliminó la suscripción',
-        }
+        },
     },
-    "fr": {
+    fr: {
         title: 'Liste des chaînes',
         subscribeButton: {
             subscribed: 'Abonné',
@@ -63,9 +65,9 @@ const locales = {
         toast: {
             subscribed: 'Abonnement ajouté',
             unsubscribed: 'Abonnement supprimé',
-        }
+        },
     },
-    "de": {
+    de: {
         title: 'Kanalliste',
         subscribeButton: {
             subscribed: 'Abonniert',
@@ -79,9 +81,9 @@ const locales = {
         toast: {
             subscribed: 'Abo hinzugefügt',
             unsubscribed: 'Abo entfernt',
-        }
+        },
     },
-    "it": {
+    it: {
         title: 'Elenco canali',
         subscribeButton: {
             subscribed: 'Iscritto',
@@ -90,15 +92,15 @@ const locales = {
         confirmModal: {
             confirmButton: 'Anulla iscrizione',
             cancelButton: 'Anulla',
-            description: (channel_name) => `Vuoi annullare l'iscrizione a ${channel_name}?`,
+            description: (channel_name) =>
+                `Vuoi annullare l'iscrizione a ${channel_name}?`,
         },
         toast: {
             subscribed: 'Iscrizione aggiunta',
             unsubscribed: 'Iscrizione rimossa',
-        }
-    }
-    
-}
+        },
+    },
+};
 
 const currentLanguage = languagesArray[1];
 

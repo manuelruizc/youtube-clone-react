@@ -4,9 +4,9 @@ import { reportBug } from '../helpers/helpers';
 class ErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { hasError: false, error:null, info:null };
-      }
-    
+        this.state = { hasError: false, error: null, info: null };
+    }
+
     async componentDidCatch(error, info) {
         const { href } = window.location;
         this.setState({ hasError: true, error, info });
@@ -14,8 +14,8 @@ class ErrorBoundary extends React.Component {
     }
     render() {
         const { hasError, error, info } = this.state;
-        if(hasError) {
-            return(
+        if (hasError) {
+            return (
                 <div>
                     <h2>The app crashed</h2>
                     <span>{error}</span>
@@ -28,6 +28,3 @@ class ErrorBoundary extends React.Component {
 }
 
 export default ErrorBoundary;
-
-
-

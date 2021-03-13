@@ -1,44 +1,44 @@
 export default {
-    "seconds": {
-        "es": "segundos"
+    seconds: {
+        es: 'segundos',
     },
-    "second": {
-        "es": "segundo",
+    second: {
+        es: 'segundo',
     },
-    "minutes": {
-        "es": "minutos"
+    minutes: {
+        es: 'minutos',
     },
-    "minute": {
-        "es": "minuto"
+    minute: {
+        es: 'minuto',
     },
-    "hours": {
-        "es": "horas",
+    hours: {
+        es: 'horas',
     },
-    "hour": {
-        "es": "hora"
+    hour: {
+        es: 'hora',
     },
-    "days": {
-        "es": "días",
+    days: {
+        es: 'días',
     },
-    "day": {
-        "es": "día"
+    day: {
+        es: 'día',
     },
-    "week": {
-        "es": "semanas"
+    week: {
+        es: 'semanas',
     },
-    "weeks": {
-        "es": "semanas"
+    weeks: {
+        es: 'semanas',
     },
-    "month": {
-        "es": "mes"
+    month: {
+        es: 'mes',
     },
-    "months": {
-        "es": "meses"
+    months: {
+        es: 'meses',
     },
-    "year": {
-        "es": "año"
+    year: {
+        es: 'año',
     },
-    "years": {
-        "es": "años"
-    }
-}
+    years: {
+        es: 'años',
+    },
+};

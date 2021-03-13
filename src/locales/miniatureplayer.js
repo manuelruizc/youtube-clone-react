@@ -1,61 +1,61 @@
 import languagesArray from '../helpers/languages';
 
 const locales = {
-    "ca": {
+    ca: {
         overlay: {
-            text: "S'està reproduint"
+            text: "S'està reproduint",
         },
         tooltip: {
             verified: 'Verificat',
             music: "Canal oficial d'artista",
-        }
+        },
     },
-    "en": {
+    en: {
         overlay: {
-            text: 'Now playing'
+            text: 'Now playing',
         },
         tooltip: {
             verified: 'Verified',
             music: 'Official Artist Channel',
-        }
+        },
     },
-    "de": {
+    de: {
         overlay: {
-            text: 'Läuft gerade'
+            text: 'Läuft gerade',
         },
         tooltip: {
             verified: 'Bestätigt',
             music: 'Offizieller Künstlerkanal',
-        }
+        },
     },
-    "fr": {
+    fr: {
         overlay: {
-            text: 'En course de lecture'
+            text: 'En course de lecture',
         },
         tooltip: {
             verified: 'Validé',
             music: "Chaîne d'artiste officielle",
-        }
+        },
     },
-    "es": {
+    es: {
         overlay: {
-            text: 'Reproduciendo'
+            text: 'Reproduciendo',
         },
         tooltip: {
             verified: 'Verificada',
             music: 'Canal oficial de artista',
-        }
+        },
     },
-    "it": {
+    it: {
         overlay: {
-            text: 'Ora in riproduzione'
+            text: 'Ora in riproduzione',
         },
         tooltip: {
             verified: 'Verificato',
             music: "Canalle ufficiale dell'artista",
-        }
-    }
-}
+        },
+    },
+};
 
 const currentLanguage = languagesArray[1];
 

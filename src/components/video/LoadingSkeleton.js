@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoadingSkeleton = () => {
-    return(
+    return (
         <React.Fragment>
             <div className="videoinfo-skeleton">
                 <div className="title-skeleton"></div>
@@ -15,11 +15,9 @@ const LoadingSkeleton = () => {
                     </div>
                 </div>
             </div>
-            <div className="videouser-skeleton">
-                
-            </div>
+            <div className="videouser-skeleton"></div>
         </React.Fragment>
     );
-}
+};
 
 export default LoadingSkeleton;

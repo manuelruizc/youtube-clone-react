@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { Home, Library, Subscriptions, Trending } from "../../assets/Icons";
 import locales from "../../locales/navbar";
 
+// Paths where the bottom navbar should be active
 const paths = [
   "/",
   "/feed/trending",
@@ -10,10 +11,14 @@ const paths = [
   "/feed/library",
   "/playlist",
 ];
+
+// Bottom Navbar for mobile devices
 class BottomNavbar extends Component {
   render() {
     const { pathname } = this.props.location;
+    // If the current pathname is included in paths
     const pathExists = paths.includes(pathname);
+    // If current path is not included, do not render anything
     if (!pathExists) return <></>;
     return (
       <div className={"bottom-navbar"}>

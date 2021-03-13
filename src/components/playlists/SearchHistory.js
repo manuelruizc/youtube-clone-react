@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { updateLoadingState } from "../../actions/darkTheme";
+import { updateLoadingState } from "../../actions/reduxActions";
 import { CloseButton } from "../../assets/Icons";
 import {
   agoFormatting,

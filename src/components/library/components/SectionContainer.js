@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import VideosContainer from './VideosContainer';
+import { History, Playlist, ThumbUp, WatchLater } from '../../../assets/Icons';
 import locales from '../../../locales/library';
-import { History, ThumbUp, Playlist, WatchLater } from '../../../assets/Icons';
+import VideosContainer from './VideosContainer';
 
 const SectionContainer = ({
     title,
@@ -10,10 +10,13 @@ const SectionContainer = ({
     hasVideoCount,
     videoCount,
     pathname,
-    iconName
+    iconName,
 }) => {
     const playlist = title === locales.headers.playlists;
-    const className = videos.length === 0 || !videos ? 'section-container empty' : 'section-container';
+    const className =
+        videos.length === 0 || !videos
+            ? 'section-container empty'
+            : 'section-container';
     return (
         <div className={className}>
             <SectionHeader
@@ -25,13 +28,10 @@ const SectionContainer = ({
                 playlist={playlist}
                 videos={videos}
             />
-            {<VideosContainer
-                videos={videos}
-                playlist={playlist}
-            />}
+            {<VideosContainer videos={videos} playlist={playlist} />}
         </div>
     );
-}
+};
 
 const SectionHeader = ({
     title,
@@ -40,37 +40,23 @@ const SectionHeader = ({
     videoCount,
     playlist,
     iconName,
-    videos
+    videos,
 }) => {
-
     const getIcon = () => {
         const iconClassName = 'header-container-icon';
-        if(iconName === 'history') {
-            return(
-                <History className={iconClassName} />
-            );
+        if (iconName === 'history') {
+            return <History className={iconClassName} />;
+        } else if (iconName === 'likedvideos') {
+            return <ThumbUp className={iconClassName} />;
+        } else if (iconName === 'watchlater') {
+            return <WatchLater className={iconClassName} />;
         }
-        else if(iconName === 'likedvideos') {
-            return(
-                <ThumbUp className={iconClassName} />
-            );
-        }
-        else if(iconName === 'watchlater') {
-            return(
-                <WatchLater className={iconClassName} />
-            );
-        }
-        return(
-            <Playlist className={iconClassName} />
-        );
-    }
+        return <Playlist className={iconClassName} />;
+    };
 
     return (
         <div className="header-container">
-            <Link
-                className="header-container-link"
-                to={pathname}
-            >
+            <Link className="header-container-link" to={pathname}>
                 {getIcon()}
                 <span className="header-title-container">
                     <span className="header-title">{title}</span>
@@ -79,15 +65,20 @@ const SectionHeader = ({
                     )}
                 </span>
             </Link>
-            <Link
-                to={pathname}
-                className="header-seeall"
-            >
-                <span style={{display: playlist || (videos.length === 0 || !videos) ? 'none' : 'inline'}}>{locales.headers.buttons.seeAll}</span>
+            <Link to={pathname} className="header-seeall">
+                <span
+                    style={{
+                        display:
+                            playlist || videos.length === 0 || !videos
+                                ? 'none'
+                                : 'inline',
+                    }}
+                >
+                    {locales.headers.buttons.seeAll}
+                </span>
             </Link>
         </div>
     );
-}
+};
 
- 
 export default SectionContainer;

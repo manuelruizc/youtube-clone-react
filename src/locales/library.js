@@ -1,26 +1,26 @@
 import languagesArray from '../helpers/languages';
 
 const locales = {
-    "ca": {
+    ca: {
         title: 'Biblioteca',
         headers: {
             history: 'Historial',
             watchLater: 'Visualitza més tard',
-            playlists: "Llistes de reproducció",
+            playlists: 'Llistes de reproducció',
             likedVideos: "Vídeos que m'agraden",
             buttons: {
                 seeAll: 'Mostra-ho tot',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Subscripcions',
                 uploads: 'Pujades',
-                likes: "M'agrada"
-            }
-        }
+                likes: "M'agrada",
+            },
+        },
     },
-    "en": {
+    en: {
         title: 'Library',
         headers: {
             history: 'History',
@@ -29,17 +29,17 @@ const locales = {
             likedVideos: 'Liked videos',
             buttons: {
                 seeAll: 'See all',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Subscriptions',
                 uploads: 'Uploads',
-                likes: 'Likes'
-            }
-        }
+                likes: 'Likes',
+            },
+        },
     },
-    "de": {
+    de: {
         title: 'Mediathek',
         headers: {
             history: 'Verlauf',
@@ -48,36 +48,36 @@ const locales = {
             likedVideos: 'Videos, die ich mag',
             buttons: {
                 seeAll: 'Alle',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Abos',
                 uploads: 'Uploads',
-                likes: '"Mag ich"-Bewertungen'
-            }
-        }
+                likes: '"Mag ich"-Bewertungen',
+            },
+        },
     },
-    "fr": {
+    fr: {
         title: 'Bibliothèque',
         headers: {
             history: 'Historique',
-            watchLater: "À regarder plus tard",
+            watchLater: 'À regarder plus tard',
             playlists: 'Playlists',
             likedVideos: `Vidéos "J'aime"`,
             buttons: {
                 seeAll: 'Tout voir',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Abonnements',
                 uploads: 'Vidéos mises en ligne',
-                likes: "J'aime"
-            }
-        }
+                likes: "J'aime",
+            },
+        },
     },
-    "es": {
+    es: {
         title: 'Biblioteca',
         headers: {
             history: 'Historial',
@@ -86,17 +86,17 @@ const locales = {
             likedVideos: 'Videos que me gustan',
             buttons: {
                 seeAll: 'Ver todo',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Suscripciones',
                 uploads: 'Videos subidos',
-                likes: 'Me gusta'
-            }
-        }
+                likes: 'Me gusta',
+            },
+        },
     },
-    "it": {
+    it: {
         title: 'Raccolta',
         headers: {
             history: 'Cronologia',
@@ -105,17 +105,17 @@ const locales = {
             likedVideos: 'Video piaciuti',
             buttons: {
                 seeAll: 'Vedi tutto',
-            }
+            },
         },
         user: {
             data: {
                 subscriptions: 'Iscrizioni',
                 uploads: 'Video caricati',
-                likes: 'Mi piace'
-            }
-        }
-    }
-}
+                likes: 'Mi piace',
+            },
+        },
+    },
+};
 
 const currentLanguage = languagesArray[1];
 
